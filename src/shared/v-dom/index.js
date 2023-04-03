@@ -46,7 +46,7 @@ const patchChildren = (parent, vChildren, nextVChildren) => {
       childNode.replaceWith(nextNode);
     }
   });
-  nextVChildren.slice(vChildren.length).forEach((vChild, idx) => {
+  nextVChildren.slice(vChildren.length).forEach((vChild) => {
     parent.append(createDOMNode(vChild));
   });
 };
