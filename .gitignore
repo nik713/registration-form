@@ -1,0 +1,4 @@
+# IDE
+node_modules
+dist
+.idea

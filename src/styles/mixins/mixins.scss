@@ -1,0 +1,13 @@
+@use './src/styles/vars/vars';
+
+@mixin text-md-semi-bold {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
+@mixin text-sm-semi-bold {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.125rem;
+}
