@@ -162,7 +162,7 @@ export const RegistrationForm = (store) => {
           ? (!confirmPassword.length &&
               h('div', { class: 'input-wrapper__error-message' }, ['Пожалуйста укажите пароль'])) ||
             (password !== confirmPassword &&
-              h('div', { class: 'input-wrapper__error-message' }, ['Пароли не совпадают укажите пароль']))
+              h('div', { class: 'input-wrapper__error-message' }, ['Пароли не совпадают']))
           : false,
       ]),
       h('button', { type: 'button', onclick: handleOnSubmit, class: 'button' }, ['Отправить']),
