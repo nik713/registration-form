@@ -124,8 +124,10 @@ export const RegistrationForm = (store) => {
           }),
         ]),
         isShowValidMessages
-          ? !email.length &&
-            h('div', { class: 'input-wrapper__error-message' }, ['Пожалуйста укажите электронную почту'])
+          ? (!email.length &&
+              h('div', { class: 'input-wrapper__error-message' }, ['Пожалуйста укажите электронную почту'])) ||
+            (!email.match(emailPattern) &&
+              h('div', { class: 'input-wrapper__error-message' }, ['Неваидная электронная почта']))
           : false,
       ]),
       h('div', { class: 'input-wrapper' }, [
@@ -141,9 +143,11 @@ export const RegistrationForm = (store) => {
         ]),
         isShowValidMessages
           ? (!password.length && h('div', { class: 'input-wrapper__error-message' }, ['Пожалуйста укажите пароль'])) ||
+            (password.length < 8 &&
+              h('div', { class: 'input-wrapper__error-message' }, ['Длина пароля минимум 8 символов'])) ||
             (!password.match(passwordPattern) &&
               h('div', { class: 'input-wrapper__error-message' }, [
-                'Пароль должен содержать минимум 1 символ верхнего регистра, цифру от 1-9 и символ !@$#% ',
+                'Пароль должен содержать 1 символ верхнего регистра, цифру от 1-9 и символ !@$#%',
               ]))
           : false,
       ]),
